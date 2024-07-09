@@ -24,7 +24,7 @@ func SearchString(mem *Memory) (string, error) {
 		content, err := mem.ReadPage(i)
 		if err != nil {
 			fmt.Println(err)
-			return "", err
+			return "err " + strconv.Itoa(i), err
 		}
 
 		// fmt.Println(len(content), "page length")
