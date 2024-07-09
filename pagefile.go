@@ -1,6 +1,8 @@
 package main
 
-import "strconv"
+import (
+	"fmt"
+)
 
 // ReadAddress(address int) (byte, error): Reads a byte from the specified address.
 // ReadPage(pageID int) ([]byte, error): Reads an entire page by its ID.
@@ -9,15 +11,21 @@ import "strconv"
 
 func SearchString(mem *Memory) (string, error) {
 	// fmt.Println("works?")
+	// offset 23937
+	content1, _ := mem.ReadAddress(23937)
+	content2, _ := mem.ReadAddress(23938)
+	content3, _ := mem.ReadAddress(23939)
+
+	fmt.Println(content1, content2, content3)
 
 	// content, _ := mem.ReadPage(0)
-	for i := 1; i < 1000000; i++ {
-		content1, _ := mem.ReadAddress(i)
-		content2, _ := mem.ReadAddress(i + 1)
-		if content1 == 'g' && content2 == 'c' {
-			return "found " + strconv.Itoa(i), nil
-		}
-	}
+	// for i := 1; i < 1000000; i++ {
+	// 	content1, _ := mem.ReadAddress(i)
+	// 	content2, _ := mem.ReadAddress(i + 1)
+	// 	if content1 == 'g' && content2 == 'c' {
+	// 		return "found " + strconv.Itoa(i), nil
+	// 	}
+	// }
 	// fmt.Println(string())
 	return "not found", nil
 }
