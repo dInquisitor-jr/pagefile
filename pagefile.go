@@ -30,7 +30,7 @@ func SearchString(mem *Memory) (string, error) {
 		// fmt.Println(len(content), "page length")
 
 		for j := 1; j < len(content); j++ {
-			if getChar(j, i, mem, content) == 'g' && getChar(j+1, i, mem, content) == 'c' && getChar(j+2, i, mem, content) == '2' && getChar(j+3, i, mem, content) == '4' {
+			if getChar(j, i, mem, content) == 'g' && getChar(j+1, i, mem, content) == 'c' { // && getChar(j+2, i, mem, content) == '2' && getChar(j+3, i, mem, content) == '4' {
 				return "found " + strconv.Itoa(i) + " " + strconv.Itoa(j), nil
 			}
 		}
