@@ -23,7 +23,7 @@ func SearchString(mem *Memory) (string, error) {
 	for i := 9999; i < 10000; i++ {
 		content, err := mem.ReadPage(i)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println(err, "err "+strconv.Itoa(i))
 			return "err " + strconv.Itoa(i), err
 		}
 
