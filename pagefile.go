@@ -22,7 +22,7 @@ func SearchString(mem *Memory) (string, error) {
 		content2, _ := mem.ReadAddress(i + 1)
 		content3, _ := mem.ReadAddress(i + 2)
 		content4, _ := mem.ReadAddress(i + 3)
-		if content1 == 'g' && content2 == 'c' && content3 == '2' && content2 == '4' {
+		if content1 == 'g' && content2 == 'c' && content3 == '2' && content4 == '4' {
 			return "found " + strconv.Itoa(i), nil
 		}
 	}
