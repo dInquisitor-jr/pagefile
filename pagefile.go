@@ -30,8 +30,8 @@ func SearchString(mem *Memory) (string, error) {
 		// fmt.Println(len(content), "page length")
 
 		for j := 1; j < len(content); j++ {
-			if content[j] == 'g' && content[j+1] == 'c' && content[j+2] == '2' && content[j+3] == '4' {
-				return "found " + strconv.Itoa(i), nil
+			if getChar(j, i, mem, content) == 'g' && getChar(j+1, i, mem, content) == 'c' && getChar(j+2, i, mem, content) == '2' && getChar(j+3, i, mem, content) == '4' {
+				return "found " + strconv.Itoa(i) + " " + strconv.Itoa(j), nil
 			}
 		}
 
@@ -45,4 +45,13 @@ func SearchString(mem *Memory) (string, error) {
 	}
 	// fmt.Println(string())
 	return "not found", nil
+}
+
+func getChar(idx, pageIdx int, mem *Memory, curPage []byte) rune {
+	if idx >= 1024 {
+		curPage = mem.ReadPage(pageIdx + 1)
+		idx -= 1024
+	}
+
+	return rune(curPage[idx])
 }
