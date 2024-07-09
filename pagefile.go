@@ -9,7 +9,7 @@ func SearchString(mem *Memory) (string, error) {
 	// fmt.Println("works?")
 
 	// content, _ := mem.ReadPage(0)
-	for i := 1; i < 10000; i++ {
+	for i := 1; i < 1000000; i++ {
 		content1, _ := mem.ReadAddress(i)
 		content2, _ := mem.ReadAddress(i + 1)
 		if content1 == 'g' && content2 == 'c' {
@@ -17,5 +17,5 @@ func SearchString(mem *Memory) (string, error) {
 		}
 	}
 	// fmt.Println(string())
-	return "", nil
+	return "not found", nil
 }
