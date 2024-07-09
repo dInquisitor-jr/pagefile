@@ -10,6 +10,6 @@ import (
 func SearchString(mem *Memory) (string, error) {
 	// fmt.Println("works?")
 	content, _ := mem.ReadPage(0)
-	fmt.Println(content)
+	fmt.Println(string(content))
 	return "something", nil
 }
