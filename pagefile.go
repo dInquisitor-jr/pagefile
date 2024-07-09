@@ -49,7 +49,10 @@ func SearchString(mem *Memory) (string, error) {
 
 func getChar(idx, pageIdx int, mem *Memory, curPage []byte) rune {
 	if idx >= 1024 {
-		curPage = mem.ReadPage(pageIdx + 1)
+		curPage, err := mem.ReadPage(pageIdx + 1)
+		if err != nil {
+			panic(err)
+		}
 		idx -= 1024
 	}
 
