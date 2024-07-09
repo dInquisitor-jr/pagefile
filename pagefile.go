@@ -16,7 +16,7 @@ func SearchString(mem *Memory) (string, error) {
 
 	// fmt.Println(content1, content2, content3)
 
-	content, _ := mem.ReadPage(0)
+	// content, _ := mem.ReadPage(0)
 	for i := 1; i < 1000000; i++ {
 		content1, _ := mem.ReadAddress(i)
 		content2, _ := mem.ReadAddress(i + 1)
