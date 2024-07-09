@@ -20,7 +20,7 @@ func SearchString(mem *Memory) (string, error) {
 	// fmt.Println(content1, content2, content3)
 	// len 1024
 	// content, _ := mem.ReadPage(0)
-	for i := 1; i < 10000; i++ {
+	for i := 1; i < 1000; i++ {
 		content, err := mem.ReadPage(0)
 		if err != nil {
 			fmt.Println(err)
@@ -29,7 +29,7 @@ func SearchString(mem *Memory) (string, error) {
 
 		// fmt.Println(len(content), "page length")
 
-		for j := 1; j < len(content)-4; j++ {
+		for j := 1; j < len(content); j++ {
 			if content[j] == 'g' && content[j+1] == 'c' && content[j+2] == '2' && content[j+3] == '4' {
 				return "found " + strconv.Itoa(i), nil
 			}
